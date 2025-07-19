@@ -1,5 +1,6 @@
 import { clinics } from "@/lib/data";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   const featuredClinics = clinics.slice(0, 6);
@@ -16,8 +17,8 @@ export default function HomePage() {
           <h1 className="text-white text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg animate-fadeIn">
             Global Health Tourism Clinics
           </h1>
-          <p className="text-white text-xl md:text-2xl mb-8 italic drop-shadow-md animate-fadeIn delay-200">
-            Turkey's #1 Leading Health Tourism Platform
+          <p className="text-white text-xl md:text-2xl mb-6 italic drop-shadow-md animate-fadeIn delay-200">
+            Turkey&apos;s #1 Leading Health Tourism Platform
           </p>
           <Link
             href="/clinics"
@@ -62,7 +63,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 px-10 bg-gradient-to-b  min-h-screen">
+      <section className="py-16 px-10 bg-gradient-to-b min-h-screen">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
             Most Popular Clinics Preferred by Patients
@@ -81,15 +82,20 @@ export default function HomePage() {
               className="bg-white rounded-xl shadow-lg flex flex-col transition duration-300 ease-in-out hover:brightness-95 hover:-translate-y-3"
             >
               {clinic.image && (
-                <img
-                  src={clinic.image}
-                  alt={clinic.name}
-                  className="w-full h-48 object-cover rounded-t-xl"
+                <div
+                  className="relative w-full h-[200px] overflow-hidden rounded-t-xl"
                   style={{
                     borderBottomLeftRadius: 0,
                     borderBottomRightRadius: 0,
                   }}
-                />
+                >
+                  <Image
+                    src={clinic.image}
+                    alt={clinic.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
               )}
 
               <div className="p-5 flex flex-col items-center">
@@ -105,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="w-full bg-white px-6 sm:px-50 py-16 pt-0">
+      <section className="w-full bg-white px-6 sm:px-12 py-16 pt-0">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-10">
           <div className="flex-1">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-snug">

@@ -1,6 +1,6 @@
 import { clinics } from "@/lib/data";
-import { Clinic } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
 
@@ -24,15 +24,15 @@ export default function ClinicPage({ params }: Props) {
       <nav className="max-w-5xl mx-auto p-4 text-sm text-gray-600">
         <ol className="flex items-center space-x-2">
           <li>
-            <a href="/" className="text-[#0066CC] hover:underline">
+            <Link href="/" className="text-[#0066CC] hover:underline">
               Home
-            </a>
+            </Link>
           </li>
           <li>/</li>
           <li>
-            <a href="/clinics" className="text-[#0066CC] hover:underline">
+            <Link href="/clinics" className="text-[#0066CC] hover:underline">
               Clinics
-            </a>
+            </Link>
           </li>
           <li>/</li>
           <li className="text-gray-800 font-medium truncate max-w-[200px]">

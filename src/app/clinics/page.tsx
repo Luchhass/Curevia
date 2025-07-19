@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
 import ClinicCard from "@/components/ClinicCard";
 import ClinicCardSkeleton from "@/components/ClinicCardSkeleton";
 import SearchFilters from "@/components/SearchFilters";
@@ -67,12 +68,14 @@ export default function ClinicsPage() {
       <nav className="max-w-7xl mx-auto px-5 mt-4 text-sm flex items-center justify-between">
         <ol className="flex items-center space-x-2 text-gray-500">
           <li>
-            <a href="/" className="hover:underline text-[#0066CC]">
+            <Link href="/" className="hover:underline text-[#0066CC]">
               Home
-            </a>
+            </Link>
           </li>
           <li>/</li>
-          <li className="text-gray-700 font-medium">Clinics</li>
+          <li className="text-gray-700 font-medium" aria-current="page">
+            Clinics
+          </li>
         </ol>
 
         <div className="flex items-center space-x-3">
@@ -83,7 +86,8 @@ export default function ClinicsPage() {
             title="WhatsApp"
             className="p-2 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-green-600"
           >
-            <FaWhatsapp size={22} />
+            <FaWhatsapp size={22} aria-hidden="true" />
+            <span className="sr-only">WhatsApp</span>
           </a>
 
           <a
@@ -91,7 +95,8 @@ export default function ClinicsPage() {
             title="Email"
             className="p-2 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-blue-600"
           >
-            <AiOutlineMail size={22} />
+            <AiOutlineMail size={22} aria-hidden="true" />
+            <span className="sr-only">Email</span>
           </a>
         </div>
       </nav>
@@ -122,17 +127,22 @@ export default function ClinicsPage() {
         </div>
 
         {!isLoading && totalPages > 1 && (
-          <div className="mt-8 mb-4 flex justify-center gap-2">
+          <div
+            className="mt-8 mb-4 flex justify-center gap-2"
+            role="navigation"
+            aria-label="Pagination Navigation"
+          >
             {Array.from({ length: totalPages }, (_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentPage(index + 1)}
+                aria-label={`Go to page ${index + 1}`}
                 className={`px-4 py-2 text-sm font-medium rounded-xl border shadow-sm transition-all duration-200
-        ${
-          currentPage === index + 1
-            ? "bg-[#0066CC] text-white border-[#0066CC]"
-            : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
-        }`}
+                  ${
+                    currentPage === index + 1
+                      ? "bg-[#0066CC] text-white border-[#0066CC]"
+                      : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                  }`}
               >
                 {index + 1}
               </button>
