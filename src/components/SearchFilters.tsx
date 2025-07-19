@@ -12,7 +12,6 @@ type Props = {
   }) => void;
 };
 
-// SVG icons
 const SearchIcon = () => (
   <svg
     className="w-5 h-5"

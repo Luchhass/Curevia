@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function HamburgerMenu() {
@@ -16,7 +16,7 @@ export default function HamburgerMenu() {
     <>
       <header className="bg-white shadow-md px-5 py-6 md:px-8 fixed w-full top-0 z-50">
         <div className="flex items-center justify-between max-w-7xl mx-auto relative z-50">
-          <Link href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold text-[#0066CC]">
             CUREVIA
           </Link>
 
@@ -29,20 +29,20 @@ export default function HamburgerMenu() {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          <nav className="hidden md:flex space-x-6 py-2">
+          <nav className="hidden md:flex space-x-8 py-2">
             <Link
               href="/"
-              className={`transition duration-200 ${
+              className={`transition duration-200 font-medium ${
                 isActive("/") ? "text-[#0066CC]" : "text-gray-700"
-              } hover:underline`}
+              } hover:text-[#0066CC]`}
             >
               Home
             </Link>
             <Link
               href="/clinics"
-              className={`transition duration-200 ${
+              className={`transition duration-200 font-medium ${
                 isActive("/clinics") ? "text-[#0066CC]" : "text-gray-700"
-              } hover:underline`}
+              } hover:text-[#0066CC]`}
             >
               Clinics
             </Link>
@@ -50,42 +50,74 @@ export default function HamburgerMenu() {
         </div>
 
         <div
-          className={`md:hidden absolute left-0 right-0 bg-white shadow-md transition-all duration-300 ease-in-out ${
+          className={`md:hidden absolute left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out ${
             isOpen
               ? "opacity-100 translate-y-0 max-h-96 pointer-events-auto"
               : "opacity-0 -translate-y-2 max-h-0 pointer-events-none"
           }`}
           style={{ top: "100%" }}
         >
-          <nav className="flex flex-col gap-2 px-5 py-4">
-            <Link
-              href="/"
-              onClick={toggleMenu}
-              className={`transition duration-200 ${
-                isActive("/") ? "text-[#0066CC]" : "text-gray-700"
-              } hover:underline`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/clinics"
-              onClick={toggleMenu}
-              className={`transition duration-200 ${
-                isActive("/clinics") ? "text-[#0066CC]" : "text-gray-700"
-              } hover:underline`}
-            >
-              Clinics
-            </Link>
+          <nav className="px-6 py-6">
+            <div className="space-y-4">
+              <Link
+                href="/"
+                onClick={toggleMenu}
+                className={`block text-lg font-medium transition duration-200 ${
+                  isActive("/") ? "text-[#0066CC]" : "text-gray-700"
+                } hover:text-[#0066CC] hover:bg-blue-50 px-3 py-2 rounded-lg`}
+              >
+                Home
+              </Link>
+              <Link
+                href="/clinics"
+                onClick={toggleMenu}
+                className={`block text-lg font-medium transition duration-200 ${
+                  isActive("/clinics") ? "text-[#0066CC]" : "text-gray-700"
+                } hover:text-[#0066CC] hover:bg-blue-50 px-3 py-2 rounded-lg`}
+              >
+                Clinics
+              </Link>
+            </div>
           </nav>
 
-          <div className="px-5 pb-4 mt-3 border-t pt-4 space-y-3">
-            <div>
-              <p className="text-[#0066CC] font-medium">WhatsApp</p>
-              <p className="text-black font-medium">+90 532 123 45 67</p>
+          <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+              İletişim
+            </h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <div className="flex-shrink-0">
+                  <Phone className="w-5 h-5 text-[#0066CC]" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 font-medium">WhatsApp</p>
+                  <p className="text-sm text-gray-800 font-semibold">
+                    +90 532 123 45 67
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-3">
+                <div className="flex-shrink-0">
+                  <Mail className="w-5 h-5 text-[#0066CC]" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 font-medium">E-posta</p>
+                  <p className="text-sm text-gray-800 font-semibold">
+                    info@curevia.com
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-[#0066CC] font-medium">Mail</p>
-              <p className="text-black font-medium">info@curevia.com</p>
+
+            <div className="mt-4 pt-4 border-t border-gray-200">
+              <Link
+                href="/clinics"
+                onClick={toggleMenu}
+                className="w-full bg-[#0066CC] hover:bg-[#0052a3] text-white text-center py-2.5 rounded-lg font-semibold transition duration-200 block"
+              >
+                Randevu Al
+              </Link>
             </div>
           </div>
         </div>
@@ -93,7 +125,7 @@ export default function HamburgerMenu() {
 
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/30 z-40 md:hidden"
           onClick={toggleMenu}
           style={{ top: "88px" }}
         />

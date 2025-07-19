@@ -163,7 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="w-full bg-white px-6 sm:px-12 py-16 pt-0">
+      <section className="w-full bg-white px-8 sm:px-68 py-16 pt-0">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-10">
           <div className="flex-1">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-snug">
