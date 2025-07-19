@@ -13,16 +13,68 @@ export default function HomePage() {
   return (
     <main>
       <section className="relative bg-[#0066CC] h-screen flex flex-col justify-center items-center text-center px-5 py-10 overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="grid grid-cols-8 gap-20 h-full w-full transform rotate-12 scale-150">
+            {[...Array(64)].map((_, i) => (
+              <div key={i} className="flex items-center justify-center">
+                <div className="relative">
+                  <div className="w-12 h-3 bg-white rounded-full"></div>
+                  <div className="w-3 h-12 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 animate-bounce delay-100">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+              <div className="w-4 h-1 bg-[#0066CC] rounded"></div>
+              <div className="w-1 h-4 bg-[#0066CC] rounded absolute"></div>
+            </div>
+          </div>
+
+          <div className="absolute top-40 right-20 animate-bounce delay-300">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+              <div className="w-5 h-1.5 bg-[#0066CC] rounded"></div>
+              <div className="w-1.5 h-5 bg-[#0066CC] rounded absolute"></div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-32 left-20 animate-bounce delay-500">
+            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+              <div className="w-3 h-0.5 bg-[#0066CC] rounded"></div>
+              <div className="w-0.5 h-3 bg-[#0066CC] rounded absolute"></div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-20 right-10 animate-bounce delay-700">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+              <div className="w-6 h-1.5 bg-[#0066CC] rounded"></div>
+              <div className="w-1.5 h-6 bg-[#0066CC] rounded absolute"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-16 right-32 w-32 h-32 border-4 border-white rounded-full animate-spin"></div>
+          <div className="absolute bottom-24 left-32 w-24 h-24 border-4 border-white rounded-lg rotate-45 animate-pulse"></div>
+          <div className="absolute top-1/3 left-16 w-16 h-16 bg-white rounded-full animate-ping"></div>
+          <div className="absolute bottom-1/3 right-16 w-20 h-20 border-4 border-white rounded-full"></div>
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0066CC]/20 via-transparent to-[#004499]/30"></div>
+
         <div className="relative z-10 max-w-3xl">
-          <h1 className="text-white text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg animate-fadeIn">
+          <h1 className="text-white text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
             Global Health Tourism Clinics
           </h1>
-          <p className="text-white text-xl md:text-2xl mb-6 italic drop-shadow-md animate-fadeIn delay-200">
+          <p className="text-white text-xl md:text-2xl mb-6 italic drop-shadow-md">
             Turkey&apos;s #1 Leading Health Tourism Platform
           </p>
           <Link
             href="/clinics"
-            className="inline-block bg-[#FF6B35] hover:bg-[#e55a2d] text-white font-semibold rounded-md px-8 py-3 shadow-lg transition"
+            className="inline-block bg-[#FF6B35] hover:bg-[#e55a2d] text-white font-semibold rounded-md px-8 py-3 shadow-lg transition transform hover:scale-105 hover:shadow-xl"
           >
             Make an Appointment Now
           </Link>
