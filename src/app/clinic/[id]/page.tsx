@@ -6,6 +6,7 @@ import { Star } from "lucide-react";
 
 type Props = {
   params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateStaticParams() {
@@ -64,6 +65,7 @@ export default function ClinicPage({ params }: Props) {
             width={1000}
             height={500}
             className="w-full h-auto object-cover"
+            priority
           />
         </div>
 
