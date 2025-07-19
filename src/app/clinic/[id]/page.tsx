@@ -22,7 +22,7 @@ export default async function ClinicPage({ params }: Props) {
 
   return (
     <>
-      <nav className="max-w-5xl mx-auto p-4 text-sm text-gray-600">
+      <nav className="max-w-5xl mx-auto p-4 text-sm text-gray-600 mt-8">
         <ol className="flex items-center space-x-2">
           <li>
             <Link href="/" className="text-[#0066CC] hover:underline">

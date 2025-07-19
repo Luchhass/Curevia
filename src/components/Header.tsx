@@ -82,7 +82,7 @@ export default function HamburgerMenu() {
 
           <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
-              İletişim
+              Contact
             </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
@@ -102,7 +102,7 @@ export default function HamburgerMenu() {
                   <Mail className="w-5 h-5 text-[#0066CC]" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-medium">E-posta</p>
+                  <p className="text-xs text-gray-500 font-medium">Email</p>
                   <p className="text-sm text-gray-800 font-semibold">
                     info@curevia.com
                   </p>
@@ -116,7 +116,7 @@ export default function HamburgerMenu() {
                 onClick={toggleMenu}
                 className="w-full bg-[#0066CC] hover:bg-[#0052a3] text-white text-center py-2.5 rounded-lg font-semibold transition duration-200 block"
               >
-                Randevu Al
+                Book Appointment
               </Link>
             </div>
           </div>

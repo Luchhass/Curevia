@@ -78,7 +78,7 @@ export default function SearchFilters({
   }, [category, city, search]);
 
   return (
-    <div className="w-full bg-[#0066CC] py-6 px-5 sm:px-10 mb-6 flex flex-col gap-4 mx-auto max-w-7xl mt-22">
+    <div className="w-full bg-[#0066CC] py-6 px-5 sm:px-30 mb-6 flex flex-col gap-4 mx-auto">
       <div className="relative w-full">
         <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
           <SearchIcon />

@@ -59,6 +59,19 @@ export default function ClinicsPage() {
 
   return (
     <>
+      <section className="w-full bg-[#F0FDF4] py-14 px-5 sm:px-10 border-b border-[#D1FADF] mt-22">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#00CC66] mb-4 leading-tight">
+            Easily Find the Best Clinics for Your Health Needs
+          </h1>
+          <p className="text-gray-700 max-w-2xl mx-auto text-base sm:text-lg">
+            Discover certified hospitals, expert doctors, and top-rated clinics
+            all in one place. Search, filter, and compare healthcare providers
+            tailored to your treatment goals.
+          </p>
+        </div>
+      </section>
+
       <SearchFilters
         categories={categories}
         cities={cities}

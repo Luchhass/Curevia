@@ -17,8 +17,9 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white">CUREVIA CLINICS</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Modern tıbbın sunduğu en ileri teknolojilerle, deneyimli doktor
-              kadromuz eşliğinde sağlığınız için en kaliteli hizmeti sunuyoruz.
+              We offer the highest quality healthcare services with experienced
+              doctors and the most advanced technologies that modern medicine
+              provides.
             </p>
             <div className="flex space-x-4 pt-2">
               <a
@@ -49,14 +50,14 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Hızlı Linkler</h4>
+            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Anasayfa
+                  Home
                 </a>
               </li>
               <li>
@@ -64,7 +65,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Hakkımızda
+                  About Us
                 </a>
               </li>
               <li>
@@ -72,7 +73,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Hizmetlerimiz
+                  Our Services
                 </a>
               </li>
               <li>
@@ -80,7 +81,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Doktorlarımız
+                  Our Doctors
                 </a>
               </li>
               <li>
@@ -88,7 +89,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Randevu Al
+                  Book Appointment
                 </a>
               </li>
               <li>
@@ -96,21 +97,21 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  İletişim
+                  Contact
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Hizmetlerimiz</h4>
+            <h4 className="text-lg font-semibold text-white">Our Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Genel Checkup
+                  General Check-up
                 </a>
               </li>
               <li>
@@ -118,7 +119,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Kardiyoloji
+                  Cardiology
                 </a>
               </li>
               <li>
@@ -126,7 +127,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Dahiliye
+                  Internal Medicine
                 </a>
               </li>
               <li>
@@ -134,7 +135,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Göz Hastalıkları
+                  Eye Diseases
                 </a>
               </li>
               <li>
@@ -142,7 +143,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Laboratuvar
+                  Laboratory
                 </a>
               </li>
               <li>
@@ -150,7 +151,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
-                  Radyoloji
+                  Radiology
                 </a>
               </li>
             </ul>
@@ -158,7 +159,7 @@ export default function Footer() {
 
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">
-              İletişim Bilgileri
+              Contact Information
             </h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
@@ -169,7 +170,7 @@ export default function Footer() {
                 <p className="text-gray-300 text-sm">
                   Merkez Mah. Sağlık Cad. No:123
                   <br />
-                  Şişli / İstanbul
+                  Şişli / Istanbul
                 </p>
               </div>
 
@@ -196,10 +197,10 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Clock className="text-blue-400 mt-1 flex-shrink-0" size={16} />
                 <div className="text-gray-300 text-sm">
-                  <p className="font-medium">Çalışma Saatleri:</p>
-                  <p>Pazartesi - Cuma: 08:00 - 18:00</p>
-                  <p>Cumartesi: 09:00 - 15:00</p>
-                  <p>Pazar: Kapalı</p>
+                  <p className="font-medium">Working Hours:</p>
+                  <p>Monday - Friday: 08:00 - 18:00</p>
+                  <p>Saturday: 09:00 - 15:00</p>
+                  <p>Sunday: Closed</p>
                 </div>
               </div>
             </div>
@@ -209,33 +210,32 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Curevia Clinics. Tüm hakları
-              saklıdır.
+              © {new Date().getFullYear()} Curevia Clinics. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a
                 href="#"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
-                Gizlilik Politikası
+                Privacy Policy
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
-                Kullanım Şartları
+                Terms of Use
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
-                KVKK
+                GDPR
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
-                Çerez Politikası
+                Cookie Policy
               </a>
             </div>
           </div>
