@@ -11,15 +11,17 @@ export default function ClinicCard({ clinic }: Props) {
   return (
     <Link
       href={`/clinic/${clinic.id}`}
-      className="block rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white"
+      className="block rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
       <div className="relative w-full h-48 overflow-hidden">
         <Image
           src={clinic.image}
-          alt={clinic.name}
-          width={400}
-          height={200}
-          className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+          alt={`${clinic.name} clinic exterior`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 hover:scale-105"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
       </div>
 
@@ -43,7 +45,14 @@ export default function ClinicCard({ clinic }: Props) {
         <p className="text-sm font-medium text-gray-800">{clinic.priceRange}</p>
 
         {clinic.description && (
-          <p className="text-sm text-gray-600 mt-2 line-clamp-2">
+          <p
+            className="text-sm text-gray-600 mt-2 overflow-hidden"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+            }}
+          >
             {clinic.description}
           </p>
         )}

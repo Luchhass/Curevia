@@ -9,6 +9,10 @@ export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   const pathname = usePathname();
+
+  // Eğer alt sayfalar da aktif sayılırsa, bunu kullanabilirsin:
+  // const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
+  // Ama şu anda tam eşleşme kullanılıyor:
   const isActive = (href: string) => pathname === href;
 
   return (
@@ -20,6 +24,8 @@ export default function HamburgerMenu() {
 
         <button
           onClick={toggleMenu}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
           className="md:hidden p-2 rounded-md hover:text-[#0066CC] transition-colors duration-200"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}

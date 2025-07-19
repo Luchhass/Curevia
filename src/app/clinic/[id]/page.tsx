@@ -1,12 +1,11 @@
 import { clinics } from "@/lib/data";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
 
 type Props = {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: Promise<{ id: string }>;
 };
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
@@ -15,8 +14,9 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
   }));
 }
 
-export default function ClinicPage({ params }: Props) {
-  const clinic = clinics.find((c) => c.id.toString() === params.id);
+export default async function ClinicPage({ params }: Props) {
+  const { id } = await params;
+  const clinic = clinics.find((c) => c.id.toString() === id);
 
   if (!clinic) return notFound();
 
@@ -116,7 +116,9 @@ export default function ClinicPage({ params }: Props) {
             <h3 className="text-lg font-semibold text-blue-700 mb-1">
               Languages Spoken
             </h3>
-            <p className="text-sm text-gray-700">{clinic.languages.join(", ")}</p>
+            <p className="text-sm text-gray-700">
+              {clinic.languages.join(", ")}
+            </p>
           </div>
 
           <div>
