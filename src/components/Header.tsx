@@ -10,13 +10,10 @@ export default function HamburgerMenu() {
   const toggleMenu = () => setIsOpen(!isOpen);
   const pathname = usePathname();
 
-  // Eğer alt sayfalar da aktif sayılırsa, bunu kullanabilirsin:
-  // const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
-  // Ama şu anda tam eşleşme kullanılıyor:
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="bg-white shadow-md px-5 py-6 md:px-8 relative z-50">
+    <header className="bg-white shadow-md px-5 py-6 md:px-8 fixed w-full top-0 z-50">
       <div className="flex items-center justify-between max-w-7xl mx-auto relative z-50">
         <Link href="/" className="text-xl font-bold">
           CUREVIA

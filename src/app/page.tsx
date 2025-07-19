@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="relative bg-[#0066CC] h-[calc(100vh-88px)] flex flex-col justify-center items-center text-center px-5 py-10 overflow-hidden">
+      <section className="relative bg-[#0066CC] h-screen flex flex-col justify-center items-center text-center px-5 py-10 overflow-hidden">
         <div className="relative z-10 max-w-3xl">
           <h1 className="text-white text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg animate-fadeIn">
             Global Health Tourism Clinics
