@@ -9,7 +9,7 @@ type Props = {
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ id: string }[]> {
   return clinics.map((clinic) => ({
     id: clinic.id.toString(),
   }));
@@ -116,9 +116,7 @@ export default function ClinicPage({ params }: Props) {
             <h3 className="text-lg font-semibold text-blue-700 mb-1">
               Languages Spoken
             </h3>
-            <p className="text-sm text-gray-700">
-              {clinic.languages.join(", ")}
-            </p>
+            <p className="text-sm text-gray-700">{clinic.languages.join(", ")}</p>
           </div>
 
           <div>
